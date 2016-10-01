@@ -12,6 +12,11 @@ namespace RemDigits
 {
     public partial class MainForm : Form
     {
+        const int INTERVAL = 2000;
+        const string TEXT_START = "start";
+        const string TEXT_STOP = "stop";
+        const string TEXT_ENTER = "enter";
+
         Timer timer;
         string digits = "";
         int index = 0;
@@ -20,8 +25,9 @@ namespace RemDigits
         {
             InitializeComponent();
             timer = new Timer();
-            timer.Interval = 2000;
+            timer.Interval = INTERVAL;
             timer.Tick += timer_Tick;
+            btnStart.Text = TEXT_START;
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -40,7 +46,7 @@ namespace RemDigits
             }
             else if (digits.Length > 0)
             {
-                btnStart.Text = "Enter";
+                btnStart.Text = TEXT_ENTER;
                 remNum.Text = "";
                 remNum.ReadOnly = false;
                 timer.Stop();
@@ -66,13 +72,13 @@ namespace RemDigits
 
         void doHandler()
         {
-            if (btnStart.Text == "Start")
+            if (btnStart.Text == TEXT_START)
             {
                 digits = genRandomDigits((int)numLength.Value);
                 timer.Stop();
                 index = 0;
                 remNum.ReadOnly = true;
-                btnStart.Text = "Stop";
+                btnStart.Text = TEXT_STOP;
                 remNum.Text = "Ready!";
                 tsProgress.Maximum = digits.Length;
 
@@ -81,17 +87,17 @@ namespace RemDigits
                     timer.Start();
                 });
             }
-            else if (btnStart.Text == "Stop")
+            else if (btnStart.Text == TEXT_STOP)
             {
                 timer.Stop();
                 remNum.Text = "";
                 digits = "";
                 index = 0;
-                btnStart.Text = "Start";
+                btnStart.Text = TEXT_START;
             }
             else
             {
-                btnStart.Text = "Start";
+                btnStart.Text = TEXT_START;
                 remNum.ReadOnly = true;
 
                 if (remNum.Text == digits)
