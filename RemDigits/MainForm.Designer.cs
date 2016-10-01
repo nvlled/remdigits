@@ -69,11 +69,10 @@
             // btnStart
             // 
             this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnStart.Location = new System.Drawing.Point(259, 145);
+            this.btnStart.Location = new System.Drawing.Point(295, 145);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(122, 50);
             this.btnStart.TabIndex = 3;
-            this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
@@ -85,7 +84,7 @@
             this.remNum.Location = new System.Drawing.Point(12, 41);
             this.remNum.Name = "remNum";
             this.remNum.ReadOnly = true;
-            this.remNum.Size = new System.Drawing.Size(624, 98);
+            this.remNum.Size = new System.Drawing.Size(697, 98);
             this.remNum.TabIndex = 5;
             this.remNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.remNum.KeyDown += new System.Windows.Forms.KeyEventHandler(this.remNum_KeyDown);
@@ -106,7 +105,7 @@
             this.tsProgress});
             this.statusStrip1.Location = new System.Drawing.Point(0, 220);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(648, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(721, 25);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -125,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 245);
+            this.ClientSize = new System.Drawing.Size(721, 245);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.remNum);
