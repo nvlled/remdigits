@@ -12,7 +12,7 @@ namespace RemDigits
 {
     public partial class MainForm : Form
     {
-        const int INTERVAL = 2000;
+        const int INTERVAL = 2100;
         const string TEXT_START = "start";
         const string TEXT_STOP = "stop";
         const string TEXT_ENTER = "enter";
@@ -25,7 +25,7 @@ namespace RemDigits
         {
             InitializeComponent();
             timer = new Timer();
-            timer.Interval = INTERVAL;
+            numSpeed.Value = (int) INTERVAL;
             timer.Tick += timer_Tick;
             btnStart.Text = TEXT_START;
         }
@@ -84,6 +84,7 @@ namespace RemDigits
 
                 delay(200, () =>
                 {
+                    timer.Interval = (int) numSpeed.Value;
                     timer.Start();
                 });
             }

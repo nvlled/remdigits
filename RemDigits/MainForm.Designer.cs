@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.label2 = new System.Windows.Forms.Label();
             this.numLength = new System.Windows.Forms.NumericUpDown();
             this.btnStart = new System.Windows.Forms.Button();
@@ -36,8 +37,11 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsProgress = new System.Windows.Forms.ToolStripProgressBar();
+            this.numSpeed = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numLength)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpeed)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -69,7 +73,7 @@
             // btnStart
             // 
             this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnStart.Location = new System.Drawing.Point(295, 145);
+            this.btnStart.Location = new System.Drawing.Point(302, 145);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(122, 50);
             this.btnStart.TabIndex = 3;
@@ -84,15 +88,16 @@
             this.remNum.Location = new System.Drawing.Point(12, 41);
             this.remNum.Name = "remNum";
             this.remNum.ReadOnly = true;
-            this.remNum.Size = new System.Drawing.Size(697, 98);
+            this.remNum.Size = new System.Drawing.Size(711, 98);
             this.remNum.TabIndex = 5;
             this.remNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.remNum.KeyDown += new System.Windows.Forms.KeyEventHandler(this.remNum_KeyDown);
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(190, 13);
+            this.label1.Location = new System.Drawing.Point(375, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(348, 17);
             this.label1.TabIndex = 6;
@@ -105,7 +110,7 @@
             this.tsProgress});
             this.statusStrip1.Location = new System.Drawing.Point(0, 220);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(721, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(735, 25);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -120,23 +125,58 @@
             this.tsProgress.Name = "tsProgress";
             this.tsProgress.Size = new System.Drawing.Size(100, 19);
             // 
+            // numSpeed
+            // 
+            this.numSpeed.Location = new System.Drawing.Point(225, 12);
+            this.numSpeed.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numSpeed.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numSpeed.Name = "numSpeed";
+            this.numSpeed.Size = new System.Drawing.Size(76, 22);
+            this.numSpeed.TabIndex = 9;
+            this.numSpeed.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(171, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Speed: ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 245);
+            this.ClientSize = new System.Drawing.Size(735, 245);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.numSpeed);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.remNum);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.numLength);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1200, 290);
             this.Name = "MainForm";
             this.Text = "Remember Digits";
             ((System.ComponentModel.ISupportInitialize)(this.numLength)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpeed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,6 +192,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripProgressBar tsProgress;
+        private System.Windows.Forms.NumericUpDown numSpeed;
+        private System.Windows.Forms.Label label3;
     }
 }
 
